@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<h2>Mark Attendance</h2>
+
+<form method="POST">
+    {% for student in students %}
+        <p>{{ student[1] }}</p>
+        <input type="radio" name="{{ student[0] }}" value="Present"> Present
+        <input type="radio" name="{{ student[0] }}" value="Absent"> Absent
+    {% endfor %}
+
+    <button type="submit">Submit</button>
+</form>
